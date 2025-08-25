@@ -1,0 +1,28 @@
+h1{
+    background-color: yellowgreen;
+}
+h2{
+    background-color: green;
+}
+.box1{
+   background-color: aqua;
+}
+.box2{
+    background-color: violet;
+    /* một giá trị (cách xung quanh=giá trị đó) 
+    2 giá trị: giá trị đầu (trên, dưới)
+                giá trị 2 (trái, phải)
+    4 giá trị: lần lượt là trên, phải, dưới, trái*/
+    margin: 50px 10px 100px 30px;
+    /* margin: khoảng cách xung quanh */
+    width: 50%;
+    /* width: độ dài khối */
+    margin: 50px auto;
+    /* auto: canh giữa */
+    padding: 100px;
+    /* padding: khoảng cách bên trong 
+    thêm giá trị thì tương tự margin*/
+    }
+.box3{
+    background-color: lightgreen;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: CSS</title>
+    <style>
+        p{
+            color: pink;
+            background-color: black;
+            /* tên thẻ dùng chung cho tất cả thẻ cùng tên */
+        }
+        #title{
+            color:cadetblue;
+        /* id thì # */
+        }
+        .title2{
+            color:burlywood;
+        /* class thì .  */
+        }
+        h1.title2{
+            color:purple;
+        }
+        /* tên thẻ.tên class: thẻ có class thì mới có định dạng đấy */
+        /* tên thẻ1 tên thẻ2 : thẻ 1 ở ngoài thẻ 2 ở trong thì phần của thẻ 2 có định dạng */
+        h2{
+            color:red;
+            background-color: yellow;
+        }
+     
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- liên kết file css bên ngoài -->
+</head>
+<body>
+    <p style="color:blue; font-size: xx-large; background-color: aquamarine;">Inline Style</p>
+    <p id="title">Internal Style</p>
+    <p style="color:brown" class="title2">Black Pink</p>
+
+    <h1 class="title2">Ví dụ về class</h1>
+    <h2>Ví dụ về độ ưu tiên</h2>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    
+</body>
+</html>
