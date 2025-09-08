@@ -2,11 +2,15 @@ body{
     margin: 0px;
     font-family: Roboto, Arial, Tahoma;
 }
-main{
-    margin: 0 40px;
-}
 nav{
     background-color:#0c4ca3;
+}
+main{
+    width:70%;
+    margin: 0 auto;
+}
+.thongbao{
+    background-color: #f1f1f2;
 }
 ul{
     display: flex; /* sắp xếp các phần tử con theo hàng ngang */
@@ -48,7 +52,6 @@ header{
     display:inline-block; /* để thẻ p có thể canh lề với thẻ a */   
     border-bottom: 3px solid #0c4ca3;
 }
-
 .noidung{
     display:flex; 
     justify-content:center; /* khoảng cách giữa các phần tử con */
@@ -106,12 +109,10 @@ p{
 .modau{
     display:flex; 
     justify-content:space-between; /* khoảng cách giữa các phần tử con */
-    align-items: center; /*căn giữa nội dung cột theo chiều dọc*/
     margin-bottom: 20px;
     padding-bottom:0px;
     border-bottom:1px solid #b4b5ba;
-
-
+    margin-top: 20px;
 }
 .bangvideo{
     width:100%;

@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+}
+.tpdautrang{
+    display:flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+ul{
+    display:flex;
+    list-style: none;
+    
+}
