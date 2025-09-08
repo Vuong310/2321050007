@@ -1,7 +1,10 @@
 body{
     margin: 0px;
+    font-family: Roboto, Arial, Tahoma;
 }
-
+main{
+    margin: 0 40px;
+}
 nav{
     background-color:#0c4ca3;
 }
@@ -12,18 +15,17 @@ ul{
     justify-content:center; /* căn giữa các phần tử con */
 }
 li{
-    padding: 15px;
+    padding: 15px; /* khoảng cách bên trong phần tử */
 }
 .border{
-    border-right: 1px solid grey;
+    border-right: 1px solid grey; /* solid: đường viền liền mạch */
 }
 .danhmuc-lienket{
     color:white;
-    text-decoration: none; /* xóa gạch chân */
-    font-family: Roboto, Arial, Tahoma;
+    text-decoration: none; /* xóa gạch chân */ 
 }
 .banner-qc{
-    justify-content:center;
+    justify-content:center; /* căn giữa các phần tử con */
     display:flex;
     margin: 10px 0px;
 }
@@ -31,16 +33,109 @@ li{
     display:flex;
     justify-content:space-between; /* khoảng cách giữa các phần tử con */
 }
+.qc1{
+    display:flex; /* khoảng cách giữa các phần tử con */
+    justify-content:center;
+}
 header{
     border-bottom: 15px solid #f1f1f2;
 }
 .tieude{
-    font-family: Roboto, Arial, Tahoma;
     color:#0c4ca3;
+    font-size: 20px;
+    padding-bottom:10px;
+    margin:0px;
+    display:inline-block; /* để thẻ p có thể canh lề với thẻ a */   
+    border-bottom: 3px solid #0c4ca3;
 }
+
 .noidung{
     display:flex; 
+    justify-content:center; /* khoảng cách giữa các phần tử con */
 }
 .tintuc{
     padding:20px;
 }
+.tintuc img{
+    width: 100%;
+    height: auto;
+}
+.phude{
+    text-align:right;
+    padding-bottom: 1px;
+    margin:0%;
+}
+.phude a{
+    text-decoration: none;
+    color: black;
+    text-align: right;
+}
+.anhqc{
+    border: 1px solid #f1f1f2;
+}
+
+.danhsach{
+    list-style: square;     /* square: dấu chấm vuông */
+    display:block;
+}
+p{
+    font-size: 18px;
+}
+/* gap: thay đổi khoảng cách giữa các đối tượng trong một khối */
+.bang{
+    background-color: black; 
+    color:white;
+    border-style:dashed;
+    width:fit-content;
+}
+.bang a{
+    color: white;
+    text-decoration: none;
+}
+.noidungchan{
+    margin: 10px 10px 30px 30px;
+}
+.noidungchan a{
+    text-decoration: none;
+    color: white;
+}
+#size{
+    font-size: xx-large;
+    margin-bottom:10px;
+}
+.modau{
+    display:flex; 
+    justify-content:space-between; /* khoảng cách giữa các phần tử con */
+    align-items: center; /*căn giữa nội dung cột theo chiều dọc*/
+    margin-bottom: 20px;
+    padding-bottom:0px;
+    border-bottom:1px solid #b4b5ba;
+
+
+}
+.bangvideo{
+    width:100%;
+    border-bottom:1px dotted #b4b5ba;
+    border-right:none;
+}
+.trian{
+    display:flex;
+    justify-content:space-between;
+    background-color:black;
+    width:fit-content;
+    margin: 10px auto;
+    gap:25px;
+
+}
+.video{
+    padding:10px;
+    border-right:1px dotted #b4b5ba;
+}
+.video p{
+    border-bottom:1px dotted #b4b5ba;
+    padding-bottom: 10px;
+    padding-left:20px;
+    color:white;
+}
+
+
