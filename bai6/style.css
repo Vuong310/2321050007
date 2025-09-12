@@ -1,22 +1,204 @@
 body{
-    background-color: black;
+    background-color: #000000;
     font-family:'Courier New', Courier, monospace;
     color:white;
+}
+main{
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-between;
+    margin-right:20px;
+    /* flex-direction:row; */
 }
 header{
     display:flex;
     justify-content:space-between;
 }
+aside{
+    max-width: 100%;
+}
 .tpdautrang{
     display:flex;
     justify-content: space-between;
+}
+.tpdautrang-like{
+    display:flex;
+    justify-content: flex-start;
+    padding:0%;
+    align-items: flex-end;
+    background-color: #95b18a;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 a{
     text-decoration:none;
     color:white;
 }
-ul{
+.sidebartrai ul{
     display:flex;
     list-style: none;
+    padding-inline-start: 0;
+}
+.hinhanh-tenbai{
+    /* đầu phần chính */
+    display:flex;
+    background-color:#3f3f3f;
+    align-items: center; /*Căn giữa đối tượng trong ô theo chiều dọc*/
+    margin-bottom:20px;
+    text-align:left;
+    word-wrap: break-word;/*tự động xuống dòng khi không đủ chỗ*/
+    border-radius: 8px;
+}
+.hinhanh-tenbai b{
+    width:150px;
+}
+.img-tenbai{
+    /* sidebar trái */
+    display:flex;
+    align-items: center;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 20px;
+}
+.daumain{
+    /* Phần album ở đầu hàm main */
+    display:flex;
+    justify-content:space-between;
+    margin-right:10px;
+}
+.tpdautrang input::placeholder{
+    font-size: 20px;
+    color:white;
+    width:fit-content;
+}
+.tpdautrang input{
+    outline:none;
+    flex:1;
+    border:none;
+}
+.textduoianh{
+    word-wrap: break-word;
+    /* border:white solid 1px; tí bỏ */
+    margin-top:0%;
+}
+.imgsmall{
+    /* hình ảnh trong đầu main (trang 1) */
+    object-fit: contain;
+    width:60px;
+    height:auto;
+    margin-right:10px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.imgsmall-bartrai{
+    /* Hình ảnh trong sidebar trái */
+    object-fit: contain;
+    width:60px;
+    height:auto;
+    margin-right:10px;
+    border-radius: 8px;
+}
+.imgsmall-artist{
+    /* Hình ảnh trong artist */
+    object-fit: contain;
+    width:60px;
+    height:auto;
+    margin-right:10px;
+    border-radius:50%;
+}
+.imgmedium{
+    /* Hình ảnh trong giữa */
+    object-fit: contain;
+    width: 100%;
+    height:auto;
+    margin-bottom:1px;
+    border-radius: 8px;
+}
+.imglarge{
+    /* hình trong sidebar phải */
+    object-fit: contain;
+    width:350px;
+    height:350px;
+    margin: 20px;
+}
+.img-like{
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 50px 20px 20px 20px;
+    width:30%;
+    height:auto;
+}
+.giuamain{
+    display:grid;
+    /* border:white 3px solid; này để xem rồi căn hình, tí xóa */
+    grid-template-columns:repeat(5,1fr);
+    column-gap: 20px;
+    /* background:white; tí bỏ đi */
+}
+.sidebarphai{
+    padding-top:5px;
+}
+.botron{
+    border-radius: 30px;
+    background-color: #3f3f3f;
+    margin-right: 20px;
+    display:inline-block;
+    padding:5px;
     
+}
+.boan{
+    border-radius: 10px;
+    display:inline-block;
+    border:white 1px solid;
+    padding:5px;
+    background:transparent;
+}
+.nenchinh{
+    background-color: #202020;
+    padding:0px 20px;
+    margin:5px 20px;
+    border-radius: 8px;
+    width:auto;
+    overflow:scroll;
+}
+.nenchinh-like{
+    background: linear-gradient(to bottom,#b8c8a4,#3f3f3f);
+    border-radius: 8px;
+    margin:5px 20px;
+    overflow:scroll;
+}
+.nensidebar{
+    border-radius: 10px;
+    background-color: #121212;
+    width:auto;
+    overflow:scroll;
+    overflow-x:none;
+}
+.nenicon{
+    border-radius: 50%;
+    background-color: #3f3f3f ;
+    
+}
+.bang-header, .bang-row{
+    display:grid;
+    grid-template-columns: 50px 2fr 2fr 1fr;
+}
+.bang-header{
+    border-bottom: white solid 1px;
+    margin:10px;
+}
+/* màu nhạt hơn nền like:#b8c8a4 */
+footer{
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.chancenter{
+    display:flex;
+    justify-content: center;
+}
+.kcicon{
+    margin-right: 20px;
+}
+.chancenter input{
+    width:60%;
 }
