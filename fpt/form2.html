@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        main{
+            background-color:white;
+            display:flex;
+            justify-content: space-around;
+            width:50%;
+            margin:auto;
+        }
+        a{
+            color:black;
+        }
+        .nhap input{
+            border:0;
+        }
+        .nhap{
+            border-bottom: 1px black solid;
+            padding:20px;
+        }
+        .nutbam a{
+            text-decoration: none;
+            color:white;
+        }
+        .nutbam{
+            border-radius: 8px;
+            background-color: aqua;
+            padding:10px;
+            text-align: center;
+            width:40%;
+            height:auto;
+            margin-top:50px ;
+            margin-bottom: 50px;
+        }
+        .hinh{
+            text-align: center;
+            margin:30px;
+        }
+        .him img{
+            border-radius: 10px;
+            width:70%;
+            height:auto;
+        }
+        .chanmain{
+            display:flex;
+            justify-content: space-around;
+            gap:5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="hinh">
+            <img src="img/350x495-muado.jpg"><br>
+            <a href="#">Create an account</a>
+        </div>
+        <div>
+            <h1>Log In</h1>
+            <form>
+                <div class="nhap">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" name="ten" placeholder="Your account">
+                </div>
+                <div class="nhap">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" name="mk" placeholder="Password">
+                </div>
+                <div>
+                    <input type="checkbox" name="rmb">Remember me
+                </div>
+                <div class="nutbam">
+                    <a href="#">Log in</a>
+                </div>
+                <div class="chanmain">
+                    Or login with
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,166 @@
+body {
+    background-color: #131314;
+    margin: 0;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: black;
+    width: 100%;
+    height: 10vh;
+    position:fixed;
+    top:0;
+    z-index: 1000;
+}
+
+.dautrang {
+    width: 70%;
+    margin: auto;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.dauphim{
+    margin: auto;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+}
+ul{
+    padding-inline-start: 0;
+    list-style: none;
+}
+header ul {
+    display: flex;
+    list-style: none;
+    /* gap: 20px; */
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+.imglogo{
+    width:140px;
+    height:auto;
+}
+li {
+    margin-right: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+main {
+    width: 70%;
+    background-color: black;
+    margin: auto;
+    /* overflow:scroll; */
+}
+
+.chucnang{
+    display:flex;
+    justify-content: space-between;
+    padding-right:20px;
+    align-items: center;
+}
+.nutbam{
+    border-radius: 10px;
+    background-color: #ff6500;
+    color:white;
+    padding:10px;
+    display:flex;
+}
+.imgqc, .imgtroi, .imgbn{
+    border-radius: 10px;
+    width:100%;
+    height:auto;
+}
+.imgbn{
+    margin-bottom: 20px;
+    margin-top:10vh;
+}
+.imgtroi{
+    display:block;
+    z-index: 2;
+}
+.imgqc{
+    margin-bottom:30px;
+}
+.imgphim{
+    border-radius: 10px;
+    width:200px;
+    height:300px;
+}
+.anhcochu{
+    position:relative;
+    width:100%;
+    margin-bottom:40px;
+}
+.gradient{
+    position:absolute;
+    width:100%;
+    height:100%;
+    bottom:0; left:0; top:0; right:0;
+    background-image:url(img/bgr.png);
+    background-size: cover;
+    background-position: 100%;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    z-index: 1;
+}
+.chutrenanh{
+    position:absolute;
+    bottom:0;
+    left:0;
+    top:50%;
+    right:30%;
+    z-index: 0;
+    /* background:transparent; */
+    /* border:white solid 3px; */
+}
+.chutrenanh img{
+    width:auto;
+    height:auto;
+    margin-left:20px;
+    object-fit: contain;
+}
+.troi{
+    overflow-x: scroll;
+    display:flex;
+    justify-content: space-around;
+}
+.tptroi{
+    margin-right: 20px;
+}
+footer{
+    border-top: white solid 1px;
+    width:70%;
+    margin:auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.chan{
+    border-bottom: white solid 1px;
+    display:flex;
+    justify-content: space-between;
+    margin:20px 0;
+}
+/* overflow:scroll */
+.chan img{
+    object-fit: contain;
+    width:150px;
+    height:auto;
+    vertical-align: middle;
+}
+.chuchan{
+    display:flex;
+    justify-content: space-between;
+}
+.iconchan{
+    display:flex;
+    justify-content: space-between;
+    gap:20px;
+}

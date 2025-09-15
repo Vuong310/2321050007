@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        main{
+            border-radius: 10px;
+            width:40%;
+            margin:auto;
+            margin-bottom:30px;
+            background-color: white;
+        }
+        .daumain{
+            border-bottom:1px grey solid;
+            margin-bottom:10px;
+            text-align: center;
+        }
+        .giuamain{
+            display:flex;
+            justify-content: space-around;
+            padding:10px;
+        }
+        .giuamain input{
+            width:50%;
+            height:auto;
+        }
+        .sn{
+            border:black 1px solid;
+            border-radius: 7px;
+            
+        }
+        .ddmmyyyy{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            /* margin: */
+        }
+        .gender{
+            display:flex;
+            justify-content:space-around;
+            gap:10px;
+
+        }
+        .gt{
+            border:black 1px solid;
+            border-radius: 8px;
+            padding:8px;
+            margin:10px;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+        }
+        .nutbam{
+            border-radius: 8px;
+            background-color: green;
+            text-align: center;
+            width:40%;
+            margin:auto;
+        }
+        .pass{
+            margin:10px; text-align: center; width:90%; margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="daumain">
+            <h1 style="margin-bottom: 10px;">Create a new account</h1>
+            It's quick and easy<br>
+        </div>
+        <div class="giuamain">
+            <input tyle="text" name="firstname" placeholder="Firstname" style="padding-right:10px">
+            <input tyle="text" name="startname" placeholder="Startname">
+        </div>
+        Date of birth<br>
+        <div class="ddmmyyyy">
+            
+            <select name="ngay" class="sn">
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+                <option value="1">6</option>
+                <option value="1">7</option>
+                <option value="1">8</option>
+            </select>
+            <select name="thang" class="sn">
+                <option value="Jan">January</option>
+                <option value="Feb">February</option>
+                <option value="Mar">March</option>
+                <option value="Apr">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="1">1</option>
+            </select>
+            <select name="năm" class="sn">
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+            </select>
+        </div>
+        Gender<br>
+        <div class="gender">
+            <div class="gt">
+                <input type="radio" name="gioitinh" value="Male">Male
+            </div>
+            <div class="gt">
+                <input type="radio" name="gioitinh" value="Female">Female
+            </div>
+            <div class="gt">
+                <input type="radio" name="gioitinh" value="Custom">Custom
+            </div>
+        </div>
+        <div style="text-align: center">
+            <input type="text" name="sdtml" placeholder="Mobile number or email address" class="pass"><br>
+            <input type="password" name="matkhau" placeholder="New password" class="pass">
+        </div>
+        
+        .....
+        .....
+        <div class="nutbam">
+            <a href="#">Sign up</a>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="color:blue; margin:10px;">Already have an account?</a>
+        </div>
+        
+    </main>
+    <footer>
+        <div>
+            <ul>
+                <li>English</li>
+                <li>Tiếng Việt</li>
+                
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
