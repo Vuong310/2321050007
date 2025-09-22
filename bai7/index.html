@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        document.writeln("Hello world <br>");
+        // để viết chú thích trong js dùng ký tự //
+
+        let hoTen = "Vuong Ha Linh";
+        document.writeln(hoTen+"<br>");
+        //Dau + de noi chuoi
+        //Hang so
+        const pi=3.14;
+
+        let soThuNhat = 10; let soThuHai = 5;
+        let ketQua = 0;
+        //+
+        ketQua = soThuHai + soThuNhat;
+        document.writeln(ketQua);
+        //-
+        ketQua++;
+        document.writeln(ketQua);
+        //voi ++, -- phai viet truoc khi in ra man hinh
+        soThuNhat+=soThuHai;
+        document.writeln(soThuNhat);
+        //so1 <dau>= so2 tuong duong so1=so1<dau>so2
+        let so1 = 10;
+        let so2 = "10";
+        document.writeln(so1 == so2);
+        document.writeln(so1 !== so2);
+        //hai dấu bằng thì xét giá trị còn 3 dấu bằng thì xét cả giá trị và kiểu dữ liệu
+        //thay 1 dấu = thành ! thì tương tự
+        document.writeln(!(so1!==so2));
+        //thêm ! ở trước cả biểu thức thì là phủ định của kết quả
+        //khai báo biến không có giá trị ban đầu thì là undefined
+        let thongTinSinhVien = {
+            hoTen: "Vuong Ha Linh",
+            tuoi:20,
+            gioiTinh:false,
+            lop:"He thong thong tin K68"
+        }
+
+        let diaChinha ={
+            thanhPho:"Ha Noi",
+            xa:"Thien Loc",
+            thon:"Mach Lung"
+        }
+        thongTinSinhVien.diaChi = diaChinha;
+        //Ket qua sau dong 53
+        // let thongTinSinhVien = {
+        //     hoTen: "Vuong Ha Linh",
+        //     tuoi:20,
+        //     gioiTinh:false,
+        //     lop:"He thong thong tin K68"
+        //     diaChi:{
+        //         thanhPho:"Ha Noi",
+        //         xa:"Thien Loc",
+        //         thon:"Mach Lung"
+        //     }
+        // }
+        let namNay = 2025;
+
+        document.writeln("<br>");
+        document.writeln("Xin chào bạn "
+            +thongTinSinhVien.hoTen
+            +" lớp "+thongTinSinhVien.lop
+            +" nhà ở "+thongTinSinhVien.diaChi.thanhPho
+            +" năm sinh "+(namNay-thongTinSinhVien.tuoi)+"<br>");
+        let soThuBa = "10";
+        soThuBa = parseInt(soThuBa);
+        //Gan lai gia tri bien thi moi doi kieu duoc
+        document.writeln(typeof(soThuBa));
+        let so3 = "10.5";
+        so3 = parseFloat(so3);
+        document.writeln(so3);
+
+    </script>
+</body>
+</html>

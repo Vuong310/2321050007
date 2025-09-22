@@ -8,13 +8,23 @@
     <style>
         body{
             background-color: aliceblue;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            height:90vh;
+            font-family: 'Courier New', Courier, monospace;
         }
         main{
             background-color:white;
             display:flex;
             justify-content: space-around;
             width:50%;
-            margin:auto;
+            margin: auto;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); 
+            /*dịch bóng theo chiều ngang, dịch bóng theo chiều dọc, độ mờ bóng, độ lan, màu*/
+
         }
         a{
             color:black;
@@ -24,7 +34,11 @@
         }
         .nhap{
             border-bottom: 1px black solid;
-            padding:20px;
+            padding:10px;
+            display:flex;
+            justify-content: space-between;
+            align-items: end;
+            gap:20px;
         }
         .nutbam a{
             text-decoration: none;
@@ -32,7 +46,7 @@
         }
         .nutbam{
             border-radius: 8px;
-            background-color: aqua;
+            background-color:cadetblue;
             padding:10px;
             text-align: center;
             width:40%;
@@ -42,7 +56,8 @@
         }
         .hinh{
             text-align: center;
-            margin:30px;
+            margin:20px;
+            /* border:3px solid black; */
         }
         .him img{
             border-radius: 10px;
@@ -53,6 +68,11 @@
             display:flex;
             justify-content: space-around;
             gap:5px;
+            align-items: flex-start;
+        }
+        .phai{
+            margin-right:20px;
+            /* border:3px black solid; */
         }
     </style>
 </head>
@@ -62,8 +82,8 @@
             <img src="img/350x495-muado.jpg"><br>
             <a href="#">Create an account</a>
         </div>
-        <div>
-            <h1>Log In</h1>
+        <div class="phai">
+            <h1><b>Log In</b></h1>
             <form>
                 <div class="nhap">
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -73,7 +93,7 @@
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" name="mk" placeholder="Password">
                 </div>
-                <div>
+                <div style="margin-top:10px">
                     <input type="checkbox" name="rmb">Remember me
                 </div>
                 <div class="nutbam">
@@ -81,9 +101,12 @@
                 </div>
                 <div class="chanmain">
                     Or login with
-                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                    <div class="chanmain" style="gap:10px;">
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                    </div>
+                    
                 </div>
             </form>
         </div>

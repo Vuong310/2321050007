@@ -72,6 +72,7 @@ main {
     color:white;
     padding:10px;
     display:flex;
+    gap:10px;
 }
 .imgqc, .imgtroi, .imgbn{
     border-radius: 10px;
@@ -86,6 +87,13 @@ main {
     display:block;
     z-index: 2;
 }
+.imgtroi-small{
+    display:block;
+    z-index:2;
+    width:600px;
+    height:300px;
+    border-radius:10px;
+}
 .imgqc{
     margin-bottom:30px;
 }
@@ -93,6 +101,11 @@ main {
     border-radius: 10px;
     width:200px;
     height:300px;
+}
+.imgphim-ngang{
+    border-radius:10px;
+    width:300px;
+    height:200px;
 }
 .anhcochu{
     position:relative;
@@ -115,8 +128,8 @@ main {
     position:absolute;
     bottom:0;
     left:0;
-    top:50%;
-    right:30%;
+    top:40%;
+    right:50%;
     z-index: 0;
     /* background:transparent; */
     /* border:white solid 3px; */
@@ -125,6 +138,11 @@ main {
     width:auto;
     height:auto;
     margin-left:20px;
+    object-fit: contain;
+}
+.imgtrenanh{
+    width:50%;
+    height:auto;
     object-fit: contain;
 }
 .troi{
@@ -164,3 +182,16 @@ footer{
     justify-content: space-between;
     gap:20px;
 }
+/*Danh mục*/
+.danhmuc{
+    overflow-x: scroll;
+    display:flex;
+    justify-content: space-around;
+    gap:10px;
+}
+.danhmuccon{
+    text-align: center;
+    border-radius: 10px;
+    padding:20px 60px;
+}
+
