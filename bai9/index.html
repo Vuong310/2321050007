@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng</title>
+</head>
+<body>
+    <script>
+        //MẢNG
+        let arr = [1, 2, 3, 4, 'a', 'b', 'c', 2, 3];
+        let ten = 'teb';
+        let thongTin = {
+            ten:ten,
+        }
+        document.writeln(Array.isArray(arr)); //Kiểm tra biến có phải kiểu mảng không, đúng true
+        document.writeln("<br>");
+
+        //length: kiểm tra độ dài của mảng
+        document.writeln(arr.length);
+        document.writeln("<br>");
+
+        //lấy ra phần tử trong mảng
+        document.writeln(arr[2]);
+        document.writeln("<br>");
+
+        //Thuộc tính của mảng
+
+        //indexOf: có thì trả vị trí xuất hiện đầu tiên của phần tử, không thì là -1
+        document.writeln(arr.indexOf(3));
+        document.writeln("<br>");
+
+        //lastIndexOf: kiểm tra vị trí xuất hiện cuối cùng của phần tử
+        document.writeln(arr.lastIndexOf(3));
+        document.writeln("<br>");
+
+        //thay đổi giá trị của phần tử trong mảng
+        arr[3] = 6;
+        document.writeln(arr);
+        document.writeln("<br>");
+
+        //concat: ghép mảng, nối mảng với nhau
+        let a, b, c, d;
+        a = [1, 2, 3];
+        b = "JavaScript";
+        c = [42, 'JS'];
+        d = a.concat(b,c);
+        document.writeln(d);
+        document.writeln("<br>");
+
+        //pop(): xóa phần tử cuối cùng trong mảng
+        d.pop();
+
+        //shift(): xóa phần tử đầu tiên trong mảng
+        d.shift();
+
+        //unshift(): thêm phần tử vào đầu mảng
+        d.unshift("kk");
+        
+        //push(): thêm một phần tử vào cuối mảng
+        d.push('hhaha');
+         
+        //reverse(): đảo ngược thứ tự các phần tử trong mảng
+        d.reverse();
+
+        //join: chuyển mảng thành chuỗi và dấu trong nháy sẽ là dấu ngăn cách phần tử trong mảng (chuỗi mới)
+        d = d.join('-');
+        document.writeln(d);
+        document.writeln("<br>");
+
+        //câu lệnh điều kiện
+        let so = "10";
+        let soCuoi = parseInt(so[so.length -1]);
+        if(soCuoi%2 == 0){
+            document.writeln("Số chẵn");
+        }
+        else{
+            document.writeln("Số lẻ");
+        }
+
+        let now = new Date().getHours();
+        if(now>=5 && now<10){
+            document.writeln("Chao buoi sang.");
+        }
+        else if(now>=10 && now<13){
+            document.writeln("Chao buoi trua.");
+        }
+        else if(now>=13 && now<17){
+            document.writeln("Chao buoi chieu.");
+        }
+        else if(now>=17 && now<22){
+            document.writeln("Chao buoi toi.");
+        }
+        else{
+            document.writeln("Chao buoi dem.");
+        }
+
+        //Nhap vao diem so tu 0 - 10 
+        let diemA = 7;
+        let diemB = 8;
+        let diemC = 5;
+        let tong = diemA*0.6 + diemB*0.3 + diemC*0.1;
+        if(tong>8 && tong<=10){
+            document.writeln("A")
+        }
+        else if(tong>7 && tong<=8){
+            document.writeln("B")
+        }
+        else if(tong>5 && tong<=7){
+            document.writeln("C")
+        }
+        else if(tong>4 && tong<=5){
+            document.writeln("D")
+        }
+        else{
+            document.writeln("F")
+        }
+
+    </script>
+</body>
+</html>
