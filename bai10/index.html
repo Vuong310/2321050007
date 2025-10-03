@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS (4)</title>
+</head>
+<body>
+    <script>
+        let d = new Date();
+        let theDay = d.getDay();
+        switch (theDay){
+            case 5:
+                document.writeln("Finally Friday");
+                break;
+            case 6:
+                document.writeln("Super Saturday");
+                break;
+            case 0:
+                document.writeln("Sleepy Sunday");
+                break;
+            case 1:
+            case 2:
+            case 3:
+                document.writeln("I'm looking forward to this weekend!");
+                break;
+            //case 1,2,3 đều chạy cùng 1 đoạn code 
+            //không thêm break thì chạy hết tất cả dòng lệnh 
+            default: document.writeln("I'm looking forward to this weekend!");
+        }
+        document.writeln("<br>");
+        //vòng lặp for
+        //for(start; điều kiện dừng; bước nhảy){}
+        for (let i = 1; i <= 4 ; i++) {
+            document.writeln(i+".Have a nice day!<br>")
+            
+        }
+        let danhSach = ["Dương Trần Nhật	Anh ", "Dương Vũ	Anh ", "Trần Vũ Hải	Anh ", "Bùi Ngọc	Bích ", "Phạm Quốc	Bình ", "nguyễn Văn	Chung ", "Hoàng Mạnh	Cường ", "Ngô Hoàng	Dương ", "Phạm Văn	Đại ", "Nguyễn Đình	Đạt ", "Phạm	Đức ", "Vũ Trung	Đức ", "Phạm Hương	Giang ", "Phạm Quang	Hậu ", "Trần Văn	Hiệp ", "Nguyễn Văn	Hoàng ", "Phạm Quốc	Hoàng ", "Phạm Thị	Huế ", "Trần Công	Hùng ", "Đào Thế	Huy ", "Đỗ Quang	Huy ", "Phạm Quang	Huy ", "Phạm Thành	Khang ", "Bùi Văn	Khiêm ", "Nguyễn Tiến	Khởi ", "Đỗ Trung	Kiên ", "Vương Hà	Linh ", "Đào Quang	Lộc ", "Ngô Gia	Lộc ", "Bùi Văn	Mạnh ", "Nguyễn Văn	Mạnh ", "Phan Văn	Mạnh ", "Trương Công	Minh ", "Đỗ Thành	Nam ", "Lê Duy	Nam ", "Nguyễn Hoàng	Nam ", "Nguyễn Anh	Quân ", "Cao Thị Thu	Quyên ", "Phạm Gia	Tài ", "Nguyễn Thị Thanh	Tâm © ", "Nguyễn Đình	Thái ", "Lưu Tiến	Thành ", "Trần Văn	Thành ", "Nguyễn Thị	Thúy ", "Nguyễn Thị	Thúy ", "Bùi Duy	Tiến ", "Nguyễn Văn	Tiến ", "Đỗ Văn	Trung ", "Phạm Đan	Trường ", "Lê Thị Cẩm	Tú ", "Phan Văn	Tuân ", "Cao Thái	Tuấn ", "Nguyễn Duy	Tuấn ", "Nguyễn Huy	Tuấn ", "Thiều Văn	Việt ", "Nguyễn Kiều	Vy"];
+        for (let i = 0; i<danhSach.length; i++){
+            document.writeln((i+1)+".Hello "+danhSach[i]+"<br>");
+        }
+        let count = 0;
+        for(let i = 0; i<danhSach.length;i++){
+            if(danhSach[i].toLowerCase().startsWith('nguyễn') == true){
+                count = count +1;
+            }
+        }
+        document.writeln(count);
+        document.writeln("<br>");
+        //while và do while
+        //while(điều kiện){ nhóm lệnh }: nếu điều kiện đúng thì chạy nhóm lệnh
+        //do{}while(điều kiện): chạy trước mới kiểm tra điều kiện, đk đúng thì chạy tiếp
+        let i = 0;
+        while (i<=10){
+            document.writeln("The number is "+i+"<br>");
+            i = i + 1;
+        }
+        //popup box
+        alert("Hello"); //chỉ có nút ok
+        let result = confirm("Press a button"); //có ok và cancel
+        if(result == true){
+            document.writeln("Bấm OK");
+        }
+        else{
+            document.writeln("Bấm Cancel");
+        }
+        let result2 = prompt("Nhập họ tên","Ví dụ: abc");//cho phép nhập vào 1 thông tin('Messager','cái hiện lên trong hộp nhập')
+        document.writeln(result2);
+
+        //HÀM
+        // function <tên hàm>(){
+        //     <nhóm lệnh>
+        // }
+        //hàm không tham số
+        function sayHello(){
+            document.writeln("Hello");
+        }
+        sayHello();
+        //hàm có tham số
+        let ten = prompt("Nhập tên: ","Ví dụ: Linh");
+        let namSinh = prompt("Nhập năm sinh: ","Ví dụ: 2005");
+        
+        function sayHello2(ten, namSinh){
+            document.writeln("Hello "+ten+" "+namSinh);
+        }
+        sayHello2(ten,namSinh);
+    </script>
+</body>
+</html>

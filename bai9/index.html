@@ -98,24 +98,28 @@
         //Nhap vao diem so tu 0 - 10 
         let diemA = 7;
         let diemB = 8;
-        let diemC = 5;
+        let diemC = 10;
         let tong = diemA*0.6 + diemB*0.3 + diemC*0.1;
-        if(tong>8 && tong<=10){
-            document.writeln("A")
-        }
-        else if(tong>7 && tong<=8){
-            document.writeln("B")
-        }
-        else if(tong>5 && tong<=7){
-            document.writeln("C")
-        }
-        else if(tong>4 && tong<=5){
-            document.writeln("D")
+        if(diemA<0 || diemA>10 || diemB >10 || diemB<0 || diemC>10 || diemC<0){   
+            document.writeln("Khong hop le");
         }
         else{
-            document.writeln("F")
+            if(tong>8 && tong<=10){
+                document.writeln("A");
+            }
+            else if(tong>7 && tong<=8){
+                document.writeln("B");
+            }
+            else if(tong>5 && tong<=7){
+                document.writeln("C");
+            }
+            else if(tong>4 && tong<=5){
+                document.writeln("D");
+            }
+            else{
+                document.writeln("F");
+            }
         }
-
     </script>
 </body>
 </html>
