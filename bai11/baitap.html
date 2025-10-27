@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body>
+    <h1>Tính điểm chữ:</h1>
+    <div>
+        Nhập điểm A:    
+        <input type="number" id="diemA">
+    </div>
+    <div>
+        Nhập điểm B:    
+        <input type="number" id="diemB">
+    </div>
+    <div>
+        Nhập điểm C:    
+        <input type="number" id="diemC">
+    </div>
+    <div>
+        <button onclick="diemChu()">Kết quả</button>
+    </div>
+    <div>
+        Điểm chữ:
+        <input type="text" id="ketQua">
+    </div>
+    <script>
+        function diemChu(){
+            let diemA = parseFloat(document.getElementById('diemA').value);
+            let diemB = parseFloat(document.getElementById('diemB').value);
+            let diemC = parseFloat(document.getElementById('diemC').value);
+            let canhBao = "";
+            if(!diemA){
+                canhBao+="Vui lòng nhập điểm A ";
+            }
+            if(!diemB){
+                canhBao+="Vui lòng nhập điểm B  ";
+            }
+            if(!diemC){
+                canhBao+="Vui lòng nhập điểm C";
+            }
+
+            if(canhBao){
+                alert(canhBao);
+            }
+            let tong = diemA*0.6 + diemB*0.3 + diemC*0.1;
+            let ketQua = ""
+            if(diemA<0 || diemA>10 || diemB >10 || diemB<0 || diemC>10 || diemC<0){   
+                alert("Không hợp lệ");
+                return;
+            }
+            else{
+                if(tong>8 && tong<=10){
+                    ketQua = "A";
+                }
+                else if(tong>7 && tong<=8){
+                    ketQua = "B";
+                }
+                else if(tong>5 && tong<=7){
+                    ketQua = "C";
+                }
+                else if(tong>4 && tong<=5){
+                    ketQua = "D";
+                }
+                else{
+                    ketQua = "F";
+                }
+            }
+            document.getElementById('ketQua').value = ketQua;
+            
+        }
+    </script>
+</body>
+</html>

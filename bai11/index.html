@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript (b5)</title>
+</head>
+<body>
+    <p>Tính tổng:</p>
+    <div>
+        <p>Nhập số thứ nhất:</p>
+        <input type="number" id="soThuNhat">
+    </div>
+    <div>
+        <p>Nhập số thứ hai:</p>
+        <input type="number" id="soThuHai">
+    </div>
+    <div>
+        <button onclick="tinhTong()">Tính tổng</button>
+    </div>
+    <div>
+        Kết quả: <input type="number" id="ketQua" class="ket_qua">
+    </div>
+    
+    <script>
+        
+        function tinhTong(){
+            let soThuNhat = parseFloat(document.getElementById('soThuNhat').value);
+            let soThuHai = parseFloat(document.getElementById('soThuHai').value);
+            let canhBao = "";
+            if(!soThuNhat){
+                canhBao+="Vui long nhap so thu nhat";
+            }
+            if(!soThuHai){
+                canhBao+="Vui long nhap so thu hai";
+            }
+
+            if(canhBao){
+                alert(canhBao);
+            }
+            let tong = soThuNhat + soThuHai;
+            document.getElementById('ketQua').value = tong;
+        }
+
+        // Bài cũ
+        // let hoTen = prompt("Nhap vao ten:","EX: Vuong Ha Linh");
+        // document.writeln(hoTen);
+        // function hello(){
+        //     document.writeln(hoTen);
+        // }
+        // hello();
+        // let so = prompt("Nhap vao mot so","vd:10");
+        // so = parseInt(so);
+        // // có !<biến> thì các giá trị 0, emty, undefine,... thì vào điều kiện đấy hết
+        // if(!so){
+        //     document.writeln("Khong co so");
+        // }
+        // else{
+        //     for(let i = 1; i<=so; i++){
+        //         document.writeln("hello");
+        //     }
+        // }
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
