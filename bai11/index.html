@@ -16,7 +16,10 @@
         <input type="number" id="soThuHai">
     </div>
     <div>
-        <button onclick="tinhTong()">Tính tổng</button>
+        <button onclick="tinhToan('tong')">Tính tổng</button>
+        <button onclick="tinhToan('hieu')">Tính hiệu</button>
+        <button onclick="tinhToan('tich')">Tính tích</button>
+        <button onclick="tinhToan('thuong')">Tính thương</button>
     </div>
     <div>
         Kết quả: <input type="number" id="ketQua" class="ket_qua">
@@ -24,7 +27,7 @@
     
     <script>
         
-        function tinhTong(){
+        function tinhToan(pheptinh){
             let soThuNhat = parseFloat(document.getElementById('soThuNhat').value);
             let soThuHai = parseFloat(document.getElementById('soThuHai').value);
             let canhBao = "";
@@ -38,10 +41,21 @@
             if(canhBao){
                 alert(canhBao);
             }
-            let tong = soThuNhat + soThuHai;
-            document.getElementById('ketQua').value = tong;
+            let ketQua = 0;
+            if (pheptinh =='tong'){
+                ketQua = soThuNhat + soThuHai;
+            }
+            else if (pheptinh == 'hieu'){
+                ketQua = soThuNhat - soThuHai;
+            }
+            else if (pheptinh == 'tich'){
+                ketQua = soThuNhat * soThuHai;
+            }
+            else {
+                ketQua = soThuNhat / soThuHai;
+            }
+            document.getElementById('ketQua').value = ketQua;   
         }
-
         // Bài cũ
         // let hoTen = prompt("Nhap vao ten:","EX: Vuong Ha Linh");
         // document.writeln(hoTen);
@@ -60,13 +74,6 @@
         //         document.writeln("hello");
         //     }
         // }
-
-
-
-
-
-
-        
     </script>
 </body>
 </html>

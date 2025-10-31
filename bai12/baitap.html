@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số BMI</title>
+    <style>
+        .main{
+            display:flex;
+            justify-content: space-around;
+            background-color: aquamarine;
+            width:50%;
+            margin:auto;
+            padding:20px;
+            border-radius: 30px;
+        }
+        .trai{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:20px;
+            gap:20px;
+        }
+        .pic{
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class = "trai">
+            <div>
+                Nhập vào chiều cao (m):
+                <input type="number" id="chieuCao">
+            </div>
+            <div>
+                Nhập vào cân nặng (kg):
+                <input type="number" id="canNang">
+            </div>
+            <div>
+                <button onclick = "BMI()">Tính chỉ số BMI</button>
+            </div>
+            <div>
+                Kết quả:
+                <input type="number" id="ketQua">
+            </div>
+        </div>
+        <div>
+            <img width=100px" class = "pic" src="pic/thieucan.jpg" alt="">
+        </div>
+
+    </div>
+    <script>
+        function BMI(){
+            chieuCao = parseFloat(document.getElementById('chieuCao').value);
+            canNang = parseFloat(document.getElementById('canNang').value);
+            let canhBao = '';
+            if(!chieuCao){
+                canhBao+="Vui lòng nhập chiều cao ";
+            }
+            if(chieuCao<0 && chieuCao>2.3){
+                canhBao+="Chiều cao không hợp lý. Vui lòng nhập lại.";
+            }
+            if(!canNang){
+                canhBao+="Vui lòng nhập cân nặng";
+            }
+            if(canNang<0){
+                canhBao+="Cân nặng không hợp lý. Vui lòng nhập lại.";
+            }
+            if(canhBao){
+                alert(canhBao);
+            }
+            let BMI = canNang/(chieuCao*chieuCao);
+            document.getElementById('ketQua').value = BMI;
+            if(BMI<18.5){
+                document.getElementsByClassName('pic')[0].src = 'pic/thieucan.jpg';
+            }
+            else if (BMI>=18.5 && BMI<=24.9){
+                document.getElementsByClassName('pic')[0].src = 'pic/binhthuong.jpg';
+            }
+            else if (BMI>=25 && BMI<=29.9){
+                document.getElementsByClassName('pic')[0].src = 'pic/thuacan.jpg';
+            }
+            else if (BMI>=30 && BMI<=39.9){
+                document.getElementsByClassName('pic')[0].src = 'pic/beocap1.jpg';
+            }
+            else{
+                document.getElementsByClassName('pic')[0].src = 'pic/beophinang.jpg';
+            }
+        }
+
+    </script>
+</body>
+</html>
