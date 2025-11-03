@@ -5,44 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tính chỉ số BMI</title>
     <style>
+        body{
+            color:#a65e2e;
+        }
         .main{
             display:flex;
             justify-content: space-around;
-            background-color: aquamarine;
-            width:50%;
-            margin:auto;
-            padding:20px;
+            background-color: #127cae;
+            width:100%;
+            margin:0 auto;
+            padding:10px;
             border-radius: 30px;
+            max-width: 500px;
+            box-sizing: border-box;
+            color:white;
+            flex-wrap: wrap;
+            /* border:5px solid black; */
+        }
+        button{
+            border-radius: 5px;
+            border-color: #127cae;
+            color:#a65e2e;
+            background-color: yellow;
         }
         .trai{
             display:flex;
             flex-direction: column;
-            justify-content: center;
-            padding:20px;
-            gap:20px;
+            justify-content:center;
+            padding:10px;
+            gap:10px;
         }
         .pic{
             border-radius: 10px;
+            border: 5px solid;
         }
-
     </style>
 </head>
 <body>
+    <h1 style="text-align: center;">Tính chỉ số BMI</h1>
     <div class="main">
         <div class = "trai">
             <div>
-                Nhập vào chiều cao (m):
+                <p>Nhập vào chiều cao (m):</p>
                 <input type="number" id="chieuCao">
             </div>
             <div>
-                Nhập vào cân nặng (kg):
+                <p>Nhập vào cân nặng (kg):</p>
                 <input type="number" id="canNang">
             </div>
-            <div>
+            <div style="display:flex; justify-content: center;">
                 <button onclick = "BMI()">Tính chỉ số BMI</button>
             </div>
             <div>
-                Kết quả:
+                <p>Kết quả:</p>
                 <input type="number" id="ketQua">
             </div>
         </div>
@@ -59,7 +74,7 @@
             if(!chieuCao){
                 canhBao+="Vui lòng nhập chiều cao ";
             }
-            if(chieuCao<0 && chieuCao>2.3){
+            if(chieuCao<0 || chieuCao>2.3){
                 canhBao+="Chiều cao không hợp lý. Vui lòng nhập lại.";
             }
             if(!canNang){
@@ -71,22 +86,27 @@
             if(canhBao){
                 alert(canhBao);
             }
-            let BMI = canNang/(chieuCao*chieuCao);
+            let BMI = (canNang/(chieuCao*chieuCao)).toFixed(1);
             document.getElementById('ketQua').value = BMI;
             if(BMI<18.5){
                 document.getElementsByClassName('pic')[0].src = 'pic/thieucan.jpg';
+                document.getElementsByTagName('body')[0].style = 'background-color:#e0fefe';
             }
             else if (BMI>=18.5 && BMI<=24.9){
                 document.getElementsByClassName('pic')[0].src = 'pic/binhthuong.jpg';
+                document.getElementsByTagName('body')[0].style = 'background-color:#b5ead7';
             }
             else if (BMI>=25 && BMI<=29.9){
                 document.getElementsByClassName('pic')[0].src = 'pic/thuacan.jpg';
+                document.getElementsByTagName('body')[0].style = 'background-color:#ffffd8';
             }
             else if (BMI>=30 && BMI<=39.9){
                 document.getElementsByClassName('pic')[0].src = 'pic/beocap1.jpg';
+                document.getElementsByTagName('body')[0].style = 'background-color:#ffdac1';
             }
             else{
                 document.getElementsByClassName('pic')[0].src = 'pic/beophinang.jpg';
+                document.getElementsByTagName('body')[0].style = 'background-color:#f08080';
             }
         }
 
