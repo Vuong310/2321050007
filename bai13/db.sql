@@ -74,8 +74,7 @@ CREATE TABLE IF NOT EXISTS tap_phim (
     trailer VARCHAR(255),
     FOREIGN KEY (phim_id) REFERENCES phim(id)
 );
-
--- chạy đoạn này để xóa tất cả dữ liệu trong cả 8 bảng
+-- chạy đoạn này để xóa toàn bộ dữ liệu trong bảng
 SET FOREIGN_KEY_CHECKS = 0;
 
 TRUNCATE TABLE phim_dien_vien;
@@ -89,192 +88,212 @@ TRUNCATE TABLE vai_tro;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
--- Thêm dữ liệu vào các bảng
-INSERT INTO vai_tro (ten_vai_tro) VALUES
-('Admin'),
-('Đạo diễn'),
-('Diễn viên'),
-('Người dùng');
+-- thêm dữ liệu
 
-INSERT INTO quoc_gia (ten_quoc_gia) VALUES
-('Việt Nam'), ('Mỹ'), ('Anh'), ('Pháp'), ('Hàn Quốc'),
-('Nhật Bản'), ('Trung Quốc'), ('Ấn Độ'), ('Thái Lan'), ('Singapore'),
-('Nga'), ('Đức'), ('Ý'), ('Tây Ban Nha'), ('Brazil'),
-('Canada'), ('Úc'), ('Mexico'), ('Thổ Nhĩ Kỳ'), ('Ả Rập Saudi'),
-('UAE'), ('Nam Phi'), ('Argentina'), ('Chile'), ('Thụy Điển'),
-('Na Uy'), ('Phần Lan'), ('Đan Mạch'), ('Hà Lan'), ('Bỉ');
+-- GIẢ ĐỊNH: đã USE quan_ly_web_phim;
 
+-- 1. the_loai
 INSERT INTO the_loai (ten_the_loai) VALUES
-('Hành động'), ('Tình cảm'), ('Hài hước'), ('Kinh dị'), ('Phiêu lưu'),
-('Hoạt hình'), ('Tài liệu'), ('Khoa học viễn tưởng'), ('Âm nhạc'), ('Gia đình'),
-('Chiến tranh'), ('Tội phạm'), ('Lịch sử'), ('Thần thoại'), ('Chính kịch'),
-('Thể thao'), ('Viễn Tây'), ('Trinh thám'), ('Giả tưởng'), ('Thiếu nhi'),
-('Anime'), ('Siêu anh hùng'), ('Học đường'), ('Cổ trang'), ('Võ thuật'),
-('Hình sự'), ('Tâm lý'), ('Hài kịch đen'), ('Kịch nghệ'), ('Phim ngắn');
+('Hành động'),
+('Tình cảm'),
+('Hài'),
+('Kinh dị'),
+('Viễn tưởng'),
+('Hoạt hình'),
+('Tâm lý'),
+('Hình sự'),
+('Phiêu lưu'),
+('Gia đình');
 
-INSERT INTO nguoi_dung (ten_dang_nhap, mat_khau, ho_ten, email, sdt, vai_tro_id, ngay_sinh) VALUES
--- 1 Admin duy nhất
-('admin1','pass1','Nguyen Van Admin','admin1@gmail.com','0900000001',1,'1980-01-01'),
+-- 2. vai_tro
+INSERT INTO vai_tro (ten_vai_tro) VALUES
+('admin'),
+('dao_dien'),
+('dien_vien'),
+('user');
 
--- 5 Đạo diễn
-('director1','pass2','Tran Thi Dao Dien1','director1@gmail.com','0900000002',2,'1975-02-02'),
-('director2','pass3','Tran Thi Dao Dien2','director2@gmail.com','0900000003',2,'1977-03-03'),
-('director3','pass4','Tran Thi Dao Dien3','director3@gmail.com','0900000004',2,'1979-04-04'),
-('director4','pass5','Tran Thi Dao Dien4','director4@gmail.com','0900000005',2,'1981-05-05'),
-('director5','pass6','Tran Thi Dao Dien5','director5@gmail.com','0900000006',2,'1983-06-06'),
+-- 3. quoc_gia
+INSERT INTO quoc_gia (ten_quoc_gia) VALUES
+('Viet Nam'),
+('My'),
+('Han Quoc'),
+('Nhat Ban'),
+('Anh'),
+('Phap'),
+('Duc'),
+('Trung Quoc'),
+('Thai Lan'),
+('An Do');
 
--- 12 Diễn viên
-('actor1','pass7','Le Van Dien Vien1','actor1@gmail.com','0900000007',3,'1990-07-07'),
-('actor2','pass8','Le Van Dien Vien2','actor2@gmail.com','0900000008',3,'1991-08-08'),
-('actor3','pass9','Le Van Dien Vien3','actor3@gmail.com','0900000009',3,'1992-09-09'),
-('actor4','pass10','Le Van Dien Vien4','actor4@gmail.com','0900000010',3,'1993-10-10'),
-('actor5','pass11','Le Van Dien Vien5','actor5@gmail.com','0900000011',3,'1994-11-11'),
-('actor6','pass12','Le Van Dien Vien6','actor6@gmail.com','0900000012',3,'1995-12-12'),
-('actor7','pass13','Le Van Dien Vien7','actor7@gmail.com','0900000013',3,'1989-01-13'),
-('actor8','pass14','Le Van Dien Vien8','actor8@gmail.com','0900000014',3,'1988-02-14'),
-('actor9','pass15','Le Van Dien Vien9','actor9@gmail.com','0900000015',3,'1987-03-15'),
-('actor10','pass16','Le Van Dien Vien10','actor10@gmail.com','0900000016',3,'1986-04-16'),
-('actor11','pass17','Le Van Dien Vien11','actor11@gmail.com','0900000017',3,'1985-05-17'),
-('actor12','pass18','Le Van Dien Vien12','actor12@gmail.com','0900000018',3,'1984-06-18'),
+-- 4. nguoi_dung
+-- id 1: admin
+-- id 2-11: dao_dien
+-- id 12-30: dien_vien
+INSERT INTO nguoi_dung
+(ten_dang_nhap, mat_khau, ho_ten, email, sdt, vai_tro_id, ngay_sinh) VALUES
+('admin', 'pass_admin', 'Admin He Thong', 'admin@example.com', '0900000001', 1, '1985-01-01 00:00:00'),
 
--- 12 Người dùng
-('user1','pass19','Pham Thi User1','user1@gmail.com','0900000019',4,'1995-07-19'),
-('user2','pass20','Pham Thi User2','user2@gmail.com','0900000020',4,'1996-08-20'),
-('user3','pass21','Pham Thi User3','user3@gmail.com','0900000021',4,'1997-09-21'),
-('user4','pass22','Pham Thi User4','user4@gmail.com','0900000022',4,'1998-10-22'),
-('user5','pass23','Pham Thi User5','user5@gmail.com','0900000023',4,'1999-11-23'),
-('user6','pass24','Pham Thi User6','user6@gmail.com','0900000024',4,'2000-12-24'),
-('user7','pass25','Pham Thi User7','user7@gmail.com','0900000025',4,'2001-01-25'),
-('user8','pass26','Pham Thi User8','user8@gmail.com','0900000026',4,'2002-02-26'),
-('user9','pass27','Pham Thi User9','user9@gmail.com','0900000027',4,'2003-03-27'),
-('user10','pass28','Pham Thi User10','user10@gmail.com','0900000028',4,'2004-04-28'),
-('user11','pass29','Pham Thi User11','user11@gmail.com','0900000029',4,'2005-05-29'),
-('user12','pass30','Pham Thi User12','user12@gmail.com','0900000030',4,'2006-06-30');
+('dd1', 'pass_dd1', 'Dao Dien 1', 'dd1@example.com', '0900000002', 2, '1970-01-01 00:00:00'),
+('dd2', 'pass_dd2', 'Dao Dien 2', 'dd2@example.com', '0900000003', 2, '1971-02-02 00:00:00'),
+('dd3', 'pass_dd3', 'Dao Dien 3', 'dd3@example.com', '0900000004', 2, '1972-03-03 00:00:00'),
+('dd4', 'pass_dd4', 'Dao Dien 4', 'dd4@example.com', '0900000005', 2, '1973-04-04 00:00:00'),
+('dd5', 'pass_dd5', 'Dao Dien 5', 'dd5@example.com', '0900000006', 2, '1974-05-05 00:00:00'),
+('dd6', 'pass_dd6', 'Dao Dien 6', 'dd6@example.com', '0900000007', 2, '1975-06-06 00:00:00'),
+('dd7', 'pass_dd7', 'Dao Dien 7', 'dd7@example.com', '0900000008', 2, '1976-07-07 00:00:00'),
+('dd8', 'pass_dd8', 'Dao Dien 8', 'dd8@example.com', '0900000009', 2, '1977-08-08 00:00:00'),
+('dd9', 'pass_dd9', 'Dao Dien 9', 'dd9@example.com', '0900000010', 2, '1978-09-09 00:00:00'),
+('dd10', 'pass_dd10', 'Dao Dien 10', 'dd10@example.com', '0900000011', 2, '1979-10-10 00:00:00'),
 
-INSERT INTO phim (ten_phim, dao_dien_id, nam_phat_hanh, poster, quoc_gia_id, so_tap, trailer, mo_ta) VALUES
-('The Shawshank Redemption', 2, 1994, 'shawshank.jpg', 2, 1, 'shawshank.mp4', 'Phim về hy vọng và tự do trong nhà tù'),
-('The Godfather', 3, 1972, 'godfather.jpg', 2, 1, 'godfather.mp4', 'Bố già và thế giới mafia'),
-('The Dark Knight', 4, 2008, 'dark_knight.jpg', 2, 1, 'dark_knight.mp4', 'Batman đối đầu Joker'),
-('Pulp Fiction', 5, 1994, 'pulp_fiction.jpg', 2, 1, 'pulp_fiction.mp4', 'Phim tội phạm với cấu trúc phi tuyến tính'),
-('Forrest Gump', 6, 1994, 'forrest_gump.jpg', 2, 1, 'forrest_gump.mp4', 'Cuộc đời kỳ diệu của Forrest Gump'),
-('Inception', 2, 2010, 'inception.jpg', 2, 1, 'inception.mp4', 'Giấc mơ trong giấc mơ'),
-('Fight Club', 3, 1999, 'fight_club.jpg', 2, 1, 'fight_club.mp4', 'Câu lạc bộ đánh nhau bí mật'),
-('The Matrix', 4, 1999, 'matrix.jpg', 2, 1, 'matrix.mp4', 'Thế giới ảo và sự thức tỉnh'),
-('Parasite', 5, 2019, 'parasite.jpg', 5, 1, 'parasite.mp4', 'Phim Hàn Quốc đoạt giải Oscar'),
-('Interstellar', 6, 2014, 'interstellar.jpg', 2, 1, 'interstellar.mp4', 'Du hành không gian và thời gian'),
-('Gladiator', 2, 2000, 'gladiator.jpg', 2, 1, 'gladiator.mp4', 'Chiến binh La Mã và sự trả thù'),
-('Titanic', 3, 1997, 'titanic.jpg', 2, 1, 'titanic.mp4', 'Chuyện tình trên con tàu định mệnh'),
-('Avengers: Endgame', 4, 2019, 'endgame.jpg', 2, 1, 'endgame.mp4', 'Cuộc chiến cuối cùng của Avengers'),
-('Joker', 5, 2019, 'joker.jpg', 2, 1, 'joker.mp4', 'Hành trình trở thành Joker'),
-('The Lion King', 6, 1994, 'lion_king.jpg', 2, 1, 'lion_king.mp4', 'Vua sư tử và hành trình trưởng thành'),
-('Toy Story', 2, 1995, 'toy_story.jpg', 2, 1, 'toy_story.mp4', 'Đồ chơi sống động và tình bạn'),
-('Coco', 3, 2017, 'coco.jpg', 2, 1, 'coco.mp4', 'Âm nhạc và thế giới bên kia'),
-('Up', 4, 2009, 'up.jpg', 2, 1, 'up.mp4', 'Cuộc phiêu lưu bằng khinh khí cầu'),
-('Finding Nemo', 5, 2003, 'nemo.jpg', 2, 1, 'nemo.mp4', 'Hành trình tìm con cá mất tích'),
-('Spirited Away', 6, 2001, 'spirited_away.jpg', 6, 1, 'spirited_away.mp4', 'Cô bé lạc vào thế giới linh hồn'),
-('Your Name', 2, 2016, 'your_name.jpg', 6, 1, 'your_name.mp4', 'Hoán đổi thân xác và định mệnh'),
-('Dune', 3, 2021, 'dune.jpg', 2, 1, 'dune.mp4', 'Cuộc chiến giành hành tinh sa mạc'),
-('Oppenheimer', 4, 2023, 'oppenheimer.jpg', 2, 1, 'oppenheimer.mp4', 'Cha đẻ bom nguyên tử'),
-('Barbie', 5, 2023, 'barbie.jpg', 2, 1, 'barbie.mp4', 'Thế giới của Barbie và hiện thực'),
-('The Batman', 6, 2022, 'batman.jpg', 2, 1, 'batman.mp4', 'Batman điều tra vụ án bí ẩn'),
-('Soul', 2, 2020, 'soul.jpg', 2, 1, 'soul.mp4', 'Âm nhạc và ý nghĩa cuộc sống'),
-('Logan', 3, 2017, 'logan.jpg', 2, 1, 'logan.mp4', 'Chuyến đi cuối cùng của Wolverine'),
-('Arrival', 4, 2016, 'arrival.jpg', 2, 1, 'arrival.mp4', 'Giao tiếp với người ngoài hành tinh'),
-('Mad Max: Fury Road', 5, 2015, 'mad_max.jpg', 2, 1, 'mad_max.mp4', 'Cuộc đua sinh tử trên sa mạc'),
-('The Wolf of Wall Street', 6, 2013, 'wolf_wall.jpg', 2, 1, 'wolf_wall.mp4', 'Tham vọng và sa ngã trong tài chính');
+('dv1', 'pass_dv1', 'Dien Vien 1', 'dv1@example.com', '0910000001', 3, '1990-01-01 00:00:00'),
+('dv2', 'pass_dv2', 'Dien Vien 2', 'dv2@example.com', '0910000002', 3, '1990-02-02 00:00:00'),
+('dv3', 'pass_dv3', 'Dien Vien 3', 'dv3@example.com', '0910000003', 3, '1990-03-03 00:00:00'),
+('dv4', 'pass_dv4', 'Dien Vien 4', 'dv4@example.com', '0910000004', 3, '1990-04-04 00:00:00'),
+('dv5', 'pass_dv5', 'Dien Vien 5', 'dv5@example.com', '0910000005', 3, '1990-05-05 00:00:00'),
+('dv6', 'pass_dv6', 'Dien Vien 6', 'dv6@example.com', '0910000006', 3, '1990-06-06 00:00:00'),
+('dv7', 'pass_dv7', 'Dien Vien 7', 'dv7@example.com', '0910000007', 3, '1990-07-07 00:00:00'),
+('dv8', 'pass_dv8', 'Dien Vien 8', 'dv8@example.com', '0910000008', 3, '1990-08-08 00:00:00'),
+('dv9', 'pass_dv9', 'Dien Vien 9', 'dv9@example.com', '0910000009', 3, '1990-09-09 00:00:00'),
+('dv10', 'pass_dv10', 'Dien Vien 10', 'dv10@example.com', '0910000010', 3, '1990-10-10 00:00:00'),
+('dv11', 'pass_dv11', 'Dien Vien 11', 'dv11@example.com', '0910000011', 3, '1990-11-11 00:00:00'),
+('dv12', 'pass_dv12', 'Dien Vien 12', 'dv12@example.com', '0910000012', 3, '1990-12-12 00:00:00'),
+('dv13', 'pass_dv13', 'Dien Vien 13', 'dv13@example.com', '0910000013', 3, '1991-01-01 00:00:00'),
+('dv14', 'pass_dv14', 'Dien Vien 14', 'dv14@example.com', '0910000014', 3, '1991-02-02 00:00:00'),
+('dv15', 'pass_dv15', 'Dien Vien 15', 'dv15@example.com', '0910000015', 3, '1991-03-03 00:00:00'),
+('dv16', 'pass_dv16', 'Dien Vien 16', 'dv16@example.com', '0910000016', 3, '1991-04-04 00:00:00'),
+('dv17', 'pass_dv17', 'Dien Vien 17', 'dv17@example.com', '0910000017', 3, '1991-05-05 00:00:00'),
+('dv18', 'pass_dv18', 'Dien Vien 18', 'dv18@example.com', '0910000018', 3, '1991-06-06 00:00:00'),
+('dv19', 'pass_dv19', 'Dien Vien 19', 'dv19@example.com', '0910000019', 3, '1991-07-07 00:00:00');
 
-INSERT INTO phim_dien_vien (phim_id, dien_vien_id) VALUES
-(1, 7), (1, 8), (1, 9),
-(2, 10), (2, 11),
-(3, 12), (3, 13),
-(4, 14), (4, 15),
-(5, 16), (5, 17),
-(6, 18), (6, 7),
-(7, 8), (7, 9),
-(8, 10), (8, 11),
-(9, 12), (9, 13),
-(10, 14), (10, 15),
-(11, 16), (11, 17),
-(12, 18), (12, 7),
-(13, 8), (13, 9),
-(14, 10), (14, 11),
-(15, 12), (15, 13),
-(16, 14), (16, 15),
-(17, 16), (17, 17),
-(18, 18), (18, 7),
-(19, 8), (19, 9),
-(20, 10), (20, 11),
-(21, 12), (21, 13),
-(22, 14), (22, 15),
-(23, 16), (23, 17),
-(24, 18), (24, 7),
-(25, 8), (25, 9),
-(26, 10), (26, 11),
-(27, 12), (27, 13),
-(28, 14), (28, 15),
-(29, 16), (29, 17),
-(30, 18), (30, 7);
+-- 5. phim (30 phim, dao_dien_id = 2..11, quoc_gia_id = 1..10)
+INSERT INTO phim
+(ten_phim, dao_dien_id, nam_phat_hanh, poster, quoc_gia_id, so_tap, trailer, mo_ta) VALUES
+('Phim 1', 2, 2010, 'phim1.jpg', 1, 1, 'https://example.com/trailer/p1', 'Mo ta phim 1'),
+('Phim 2', 3, 2011, 'phim2.jpg', 2, 1, 'https://example.com/trailer/p2', 'Mo ta phim 2'),
+('Phim 3', 4, 2012, 'phim3.jpg', 3, 1, 'https://example.com/trailer/p3', 'Mo ta phim 3'),
+('Phim 4', 5, 2013, 'phim4.jpg', 4, 1, 'https://example.com/trailer/p4', 'Mo ta phim 4'),
+('Phim 5', 6, 2014, 'phim5.jpg', 5, 1, 'https://example.com/trailer/p5', 'Mo ta phim 5'),
+('Phim 6', 7, 2015, 'phim6.jpg', 6, 1, 'https://example.com/trailer/p6', 'Mo ta phim 6'),
+('Phim 7', 8, 2016, 'phim7.jpg', 7, 1, 'https://example.com/trailer/p7', 'Mo ta phim 7'),
+('Phim 8', 9, 2017, 'phim8.jpg', 8, 1, 'https://example.com/trailer/p8', 'Mo ta phim 8'),
+('Phim 9', 10, 2018, 'phim9.jpg', 9, 1, 'https://example.com/trailer/p9', 'Mo ta phim 9'),
+('Phim 10', 11, 2019, 'phim10.jpg', 10, 1, 'https://example.com/trailer/p10', 'Mo ta phim 10'),
+('Phim 11', 2, 2020, 'phim11.jpg', 1, 1, 'https://example.com/trailer/p11', 'Mo ta phim 11'),
+('Phim 12', 3, 2021, 'phim12.jpg', 2, 1, 'https://example.com/trailer/p12', 'Mo ta phim 12'),
+('Phim 13', 4, 2015, 'phim13.jpg', 3, 1, 'https://example.com/trailer/p13', 'Mo ta phim 13'),
+('Phim 14', 5, 2016, 'phim14.jpg', 4, 1, 'https://example.com/trailer/p14', 'Mo ta phim 14'),
+('Phim 15', 6, 2017, 'phim15.jpg', 5, 1, 'https://example.com/trailer/p15', 'Mo ta phim 15'),
+('Phim 16', 7, 2018, 'phim16.jpg', 6, 1, 'https://example.com/trailer/p16', 'Mo ta phim 16'),
+('Phim 17', 8, 2019, 'phim17.jpg', 7, 1, 'https://example.com/trailer/p17', 'Mo ta phim 17'),
+('Phim 18', 9, 2020, 'phim18.jpg', 8, 1, 'https://example.com/trailer/p18', 'Mo ta phim 18'),
+('Phim 19', 10, 2021, 'phim19.jpg', 9, 1, 'https://example.com/trailer/p19', 'Mo ta phim 19'),
+('Phim 20', 11, 2022, 'phim20.jpg', 10, 1, 'https://example.com/trailer/p20', 'Mo ta phim 20'),
+('Phim 21', 2, 2010, 'phim21.jpg', 1, 1, 'https://example.com/trailer/p21', 'Mo ta phim 21'),
+('Phim 22', 3, 2011, 'phim22.jpg', 2, 1, 'https://example.com/trailer/p22', 'Mo ta phim 22'),
+('Phim 23', 4, 2012, 'phim23.jpg', 3, 1, 'https://example.com/trailer/p23', 'Mo ta phim 23'),
+('Phim 24', 5, 2013, 'phim24.jpg', 4, 1, 'https://example.com/trailer/p24', 'Mo ta phim 24'),
+('Phim 25', 6, 2014, 'phim25.jpg', 5, 1, 'https://example.com/trailer/p25', 'Mo ta phim 25'),
+('Phim 26', 7, 2015, 'phim26.jpg', 6, 1, 'https://example.com/trailer/p26', 'Mo ta phim 26'),
+('Phim 27', 8, 2016, 'phim27.jpg', 7, 1, 'https://example.com/trailer/p27', 'Mo ta phim 27'),
+('Phim 28', 9, 2017, 'phim28.jpg', 8, 1, 'https://example.com/trailer/p28', 'Mo ta phim 28'),
+('Phim 29', 10, 2018, 'phim29.jpg', 9, 1, 'https://example.com/trailer/p29', 'Mo ta phim 29'),
+('Phim 30', 11, 2019, 'phim30.jpg', 10, 1, 'https://example.com/trailer/p30', 'Mo ta phim 30');
 
+-- 6. phim_the_loai (mỗi phim 1–2 thể loại)
 INSERT INTO phim_the_loai (phim_id, the_loai_id) VALUES
-(1, 1), (1, 4),
-(2, 1), (2, 13),
-(3, 1), (3, 8),
-(4, 1), (4, 3),
-(5, 2), (5, 10),
-(6, 8), (6, 1),
-(7, 1), (7, 14),
-(8, 8), (8, 1),
-(9, 2), (9, 11),
-(10, 8), (10, 1),
-(11, 1), (11, 13),
-(12, 2), (12, 10),
-(13, 1), (13, 22),
-(14, 14), (14, 3),
-(15, 6), (15, 10),
-(16, 6), (16, 10),
-(17, 6), (17, 9),
-(18, 6), (18, 5),
-(19, 6), (19, 10),
-(20, 6), (20, 8),
-(21, 6), (21, 8),
-(22, 2), (22, 8),
-(23, 8), (23, 1),
-(24, 13), (24, 1),
-(25, 6), (25, 3),
-(26, 8), (26, 1),
-(27, 6), (27, 9),
-(28, 8), (28, 2),
-(29, 1), (29, 5),
-(30, 1), (30, 13);
+(1,1),(1,2),
+(2,2),(2,3),
+(3,2),
+(4,1),
+(5,5),
+(6,5),
+(7,1),(7,9),
+(8,7),
+(9,5),
+(10,2),(10,9),
+(11,1),
+(12,4),
+(13,7),
+(14,2),
+(15,3),
+(16,1),
+(17,5),
+(18,7),
+(19,1),(19,5),
+(20,2),
+(21,1),
+(22,3),
+(23,7),
+(24,4),
+(25,2),
+(26,1),
+(27,5),
+(28,7),
+(29,1),
+(30,2);
 
+-- 7. phim_dien_vien (mỗi phim 2 diễn viên: dùng id 12..30)
+INSERT INTO phim_dien_vien (phim_id, dien_vien_id) VALUES
+(1,12),(1,13),
+(2,13),(2,14),
+(3,14),(3,15),
+(4,15),(4,16),
+(5,16),(5,17),
+(6,17),(6,18),
+(7,18),(7,19),
+(8,19),(8,20),
+(9,20),(9,21),
+(10,21),(10,22),
+(11,22),(11,23),
+(12,23),(12,24),
+(13,24),(13,25),
+(14,25),(14,26),
+(15,26),(15,27),
+(16,27),(16,28),
+(17,28),(17,29),
+(18,29),(18,30),
+(19,12),(19,13),
+(20,14),(20,15),
+(21,16),(21,17),
+(22,18),(22,19),
+(23,20),(23,21),
+(24,22),(24,23),
+(25,24),(25,25),
+(26,26),(26,27),
+(27,28),(27,29),
+(28,30),(28,12),
+(29,13),(29,14),
+(30,15),(30,16);
+
+-- 8. tap_phim (5 phim đầu, mỗi phim 3 tập = 15 rows)
 INSERT INTO tap_phim (so_tap, tieu_de, phim_id, thoi_luong, trailer) VALUES
-(1, 'Tập 1: Khởi đầu', 1, 142, 'trailer1_1.mp4'),
-(1, 'Tập 1: Gia đình mafia', 2, 175, 'trailer2_1.mp4'),
-(1, 'Tập 1: Bóng tối trỗi dậy', 3, 152, 'trailer3_1.mp4'),
-(1, 'Tập 1: Vụ nổ', 4, 154, 'trailer4_1.mp4'),
-(1, 'Tập 1: Cuộc đời Forrest', 5, 144, 'trailer5_1.mp4'),
-(1, 'Tập 1: Giấc mơ tầng sâu', 6, 148, 'trailer6_1.mp4'),
-(1, 'Tập 1: Câu lạc bộ bí mật', 7, 139, 'trailer7_1.mp4'),
-(1, 'Tập 1: Viên thuốc đỏ', 8, 136, 'trailer8_1.mp4'),
-(1, 'Tập 1: Gia đình Park', 9, 132, 'trailer9_1.mp4'),
-(1, 'Tập 1: Hố đen thời gian', 10, 169, 'trailer10_1.mp4'),
-(1, 'Tập 1: Chiến binh La Mã', 11, 155, 'trailer11_1.mp4'),
-(1, 'Tập 1: Tình yêu định mệnh', 12, 195, 'trailer12_1.mp4'),
-(1, 'Tập 1: Cuộc chiến cuối cùng', 13, 181, 'trailer13_1.mp4'),
-(1, 'Tập 1: Nụ cười Joker', 14, 122, 'trailer14_1.mp4'),
-(1, 'Tập 1: Simba ra đời', 15, 88, 'trailer15_1.mp4'),
-(1, 'Tập 1: Buzz và Woody', 16, 81, 'trailer16_1.mp4'),
-(1, 'Tập 1: Ngày của người chết', 17, 105, 'trailer17_1.mp4'),
-(1, 'Tập 1: Ông già khinh khí cầu', 18, 96, 'trailer18_1.mp4'),
-(1, 'Tập 1: Nemo mất tích', 19, 100, 'trailer19_1.mp4'),
-(1, 'Tập 1: Thế giới linh hồn', 20, 125, 'trailer20_1.mp4'),
-(1, 'Tập 1: Sao đổi ngôi', 21, 106, 'trailer21_1.mp4'),
-(1, 'Tập 1: Sa mạc Arrakis', 22, 155, 'trailer22_1.mp4'),
-(1, 'Tập 1: Bom nguyên tử', 23, 180, 'trailer23_1.mp4'),
-(1, 'Tập 1: Barbie thức tỉnh', 24, 114, 'trailer24_1.mp4'),
-(1, 'Tập 1: Gotham hỗn loạn', 25, 176, 'trailer25_1.mp4'),
-(1, 'Tập 1: Linh hồn lạc lối', 26, 101, 'trailer26_1.mp4'),
-(1, 'Tập 1: Wolverine già nua', 27, 137, 'trailer27_1.mp4'),
-(1, 'Tập 1: Ngôn ngữ ngoài hành tinh', 28, 116, 'trailer28_1.mp4'),
-(1, 'Tập 1: Cuộc đua sinh tử', 29, 120, 'trailer29_1.mp4'),
-(1, 'Tập 1: Phố Wall điên cuồng', 30, 180, 'trailer30_1.mp4');
+(1,'Phim 1 - Tap 1',1,90,'https://example.com/trailer/p1_t1'),
+(2,'Phim 1 - Tap 2',1,92,'https://example.com/trailer/p1_t2'),
+(3,'Phim 1 - Tap 3',1,88,'https://example.com/trailer/p1_t3'),
+
+(1,'Phim 2 - Tap 1',2,45,'https://example.com/trailer/p2_t1'),
+(2,'Phim 2 - Tap 2',2,47,'https://example.com/trailer/p2_t2'),
+(3,'Phim 2 - Tap 3',2,44,'https://example.com/trailer/p2_t3'),
+
+(1,'Phim 3 - Tap 1',3,50,'https://example.com/trailer/p3_t1'),
+(2,'Phim 3 - Tap 2',3,51,'https://example.com/trailer/p3_t2'),
+(3,'Phim 3 - Tap 3',3,49,'https://example.com/trailer/p3_t3'),
+
+(1,'Phim 4 - Tap 1',4,40,'https://example.com/trailer/p4_t1'),
+(2,'Phim 4 - Tap 2',4,42,'https://example.com/trailer/p4_t2'),
+(3,'Phim 4 - Tap 3',4,41,'https://example.com/trailer/p4_t3'),
+
+(1,'Phim 5 - Tap 1',5,60,'https://example.com/trailer/p5_t1'),
+(2,'Phim 5 - Tap 2',5,62,'https://example.com/trailer/p5_t2'),
+(3,'Phim 5 - Tap 3',5,59,'https://example.com/trailer/p5_t3');
+
+SELECT p.*,qg.ten_quoc_gia FROM phim p
+join quoc_gia qg on p.quoc_gia_id = qg.id
+WHERE p.id = 10;
+
+-- ten phim, ten dao dien, dien vien, quoc gia
+SELECT p.ten_phim, qg.ten_quoc_gia, dd.ho_ten as ten_dao_dien, dv.ho_ten as ten_dien_vien FROM phim p 
+join quoc_gia qg on p.quoc_gia_id = qg.id
+join nguoi_dung dd on p.dao_dien_id = dd.id
+join phim_dien_vien on p.id = phim_dien_vien.phim_id
+join nguoi_dung dv on phim_dien_vien.dien_vien_id = dv.id
+where p.id = 10;

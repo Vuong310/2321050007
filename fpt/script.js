@@ -51,7 +51,7 @@ let danhSachPhim = [
         tuoi: 13,
         thoiLuong: "1.8 giờ",
         quocGia: "Nhật Bản",
-        poster: "img/ngang/conan.jpg",
+        poster: "img/ngang/conan.png",
         title:"Conan: Ngôi Sao 5 Cánh Một Triệu Đô",
         trailer:"https://www.youtube.com/embed/C4pG3GbhQZw",
     },
